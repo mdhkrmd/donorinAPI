@@ -19,7 +19,7 @@ steps:
       - '--image'
       - 'gcr.io/$PROJECT_ID/donorin:$COMMIT_SHA'
       - '--region'
-      - us-west1
+      - asia-southeast2
       - '--platform'
       - managed
     id: Deploy Container on Google Cloud Run
