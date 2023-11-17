@@ -1,3 +1,5 @@
+# Langkah Dockerfile
+
 # Menggunakan base image yang sudah terinstall Python
 FROM python:3.9-slim
 
