@@ -3,6 +3,7 @@ from flask import Flask
 from auth.register import register, showUsers
 from auth.login import login
 from auth.forgot import forgot
+from donor.daftar import daftar_donor
 
 app = Flask(__name__,static_folder='assets', template_folder='web')
 
@@ -23,6 +24,12 @@ def showUsers_route():
 @app.route('/forgot', methods=['POST'])
 def forgot_route():
     return forgot()
+
+#=============================================================================
+# Donor
+@app.route('/daftar', methods=['POST'])
+def daftar_route():
+    return daftar_donor()
 
     
 if __name__ == '__main__':
