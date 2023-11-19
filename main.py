@@ -4,6 +4,7 @@ from auth.register import register, showUsers
 from auth.login import login
 from auth.forgot import forgot
 from donor.daftar import daftar_donor
+from rspmi.show import get_rspmi, get_rspmi_detail
 
 app = Flask(__name__,static_folder='assets', template_folder='web')
 
@@ -31,6 +32,15 @@ def forgot_route():
 def daftar_route():
     return daftar_donor()
 
+#=============================================================================
+# RSPMI
+@app.route('/rspmi', methods=['GET'])
+def get_rspmi_route():
+    return get_rspmi()
+
+@app.route('/rspmi/detail', methods=['GET'])
+def get_rspmi_detail_route():
+    return get_rspmi_detail()
     
 if __name__ == '__main__':
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "auth/key.json" 
