@@ -1,0 +1,14 @@
+Flask==2.3.2
+Werkzeug
+joblib
+pandas
+numpy
+matplotlib
+scikit-learn
+tensorflow
+Pillow
+gunicorn
+google-cloud-storage
+flask-mysql==1.5.2
+requests
+tensorflow_hub
