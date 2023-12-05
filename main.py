@@ -4,6 +4,7 @@ from auth.register import register, showUsers
 from auth.login import login
 from auth.forgot import forgot
 from donor.daftar import daftar_donor
+from donor.darahDarurat import get_darah_darurat
 from rspmi.show import get_rspmi, get_rspmi_detail
 
 app = Flask(__name__,static_folder='assets', template_folder='web')
@@ -31,6 +32,10 @@ def forgot_route():
 @app.route('/daftar', methods=['POST'])
 def daftar_route():
     return daftar_donor()
+
+@app.route('/darah-darurat', methods=['GET'])
+def get_darah_darurat_route():
+    return get_darah_darurat()
 
 #=============================================================================
 # RSPMI
