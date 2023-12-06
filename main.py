@@ -7,6 +7,7 @@ from donor.daftar import daftar_donor
 from donor.darahDarurat import get_darah_darurat
 from donor.riwayat import riwayat_donor
 from rspmi.show import get_rspmi, get_rspmi_detail
+from artikel.artikel import get_artikel
 
 app = Flask(__name__,static_folder='assets', template_folder='web')
 
@@ -51,6 +52,12 @@ def get_rspmi_route():
 @app.route('/rspmi/detail', methods=['GET'])
 def get_rspmi_detail_route():
     return get_rspmi_detail()
+
+#=============================================================================
+# RSPMI
+@app.route('/artikel', methods=['GET'])
+def get_artikel_route():
+    return get_artikel()
     
 if __name__ == '__main__':
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "auth/key.json" 
