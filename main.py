@@ -3,6 +3,7 @@ from flask import Flask
 from auth.register import register, showUsers
 from auth.login import login
 from auth.forgot import forgot
+from auth.updateProfil import updateProfil
 from donor.daftar import daftar_donor
 from donor.darahDarurat import get_darah_darurat
 from donor.riwayat import riwayat_donor
@@ -28,6 +29,10 @@ def showUsers_route():
 @app.route('/forgot', methods=['POST'])
 def forgot_route():
     return forgot()
+
+@app.route('/updateprofil', methods=['POST'])
+def update_route():
+    return updateProfil()
 
 #=============================================================================
 # Donor
