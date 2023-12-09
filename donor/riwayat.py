@@ -27,6 +27,7 @@ def riwayat_donor():
         results = []
         for row in rows:
             result = {
+                'id': row[0],
                 'nik': row[1],
                 'nama': row[2],
                 'darah': row[3],
@@ -35,6 +36,7 @@ def riwayat_donor():
                 'lokasi': row[6],
                 'jadwal': row[7],
                 'status': row[8],
+                'tanggal_daftar': row[9]
             }
             results.append(result)
 

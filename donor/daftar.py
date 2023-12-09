@@ -29,7 +29,7 @@ def daftar_donor():
 
     try:
         cursor.execute("INSERT INTO daftardonor (nik, nama, darah, alamat, no, lokasi, jadwal, status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", 
-                       (nik, nama, darah, alamat, nohp, lokasi, jadwal, 'antrian'))
+                       (nik, nama, darah, alamat, nohp, lokasi, jadwal, 'Antrian'))
         conn.commit()
         conn.close()
 
