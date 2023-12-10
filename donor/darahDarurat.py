@@ -16,7 +16,7 @@ def get_darah_darurat():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    query = 'SELECT id, nama, gol_darah, deskripsi FROM darahdarurat'
+    query = 'SELECT * FROM darahdarurat'
     cursor.execute(query)
 
     try:
@@ -27,7 +27,9 @@ def get_darah_darurat():
                 'id': row[0],
                 'nama': row[1],
                 'gol_darah': row[2],
-                'deskripsi': row[3]
+                'deskripsi': row[3],
+                'status': row[4],
+                'tanggal':row[5]
             }
             results.append(result)
 
@@ -41,3 +43,37 @@ def get_darah_darurat():
             'error': str(e)
         }
         return jsonify(response)
+    
+def tambah_darah_darurat():
+    
+    data = request.get_json()
+    
+    nama = data['nama']
+    gol_darah = data['gol_darah']
+    deskripsi = data['deskripsi']
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    try:
+        query = "INSERT INTO darahdarurat (nama, gol_darah, deskripsi, status) VALUES (%s, %s, %s, %s)"
+        cursor.execute(query, (nama, gol_darah, deskripsi, 'Terbuka'))
+        conn.commit()
+
+        response = {
+            'status': 'success',
+            'message': 'Data berhasil ditambahkan'
+        }
+        return jsonify(response)
+    
+    except Exception as e:
+        conn.rollback()
+        response = {
+            'status': 'error',
+            'message': 'Terjadi kesalahan saat menambahkan data',
+            'error': str(e)
+        }
+        return jsonify(response)
+    
+    finally:
+        conn.close()

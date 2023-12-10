@@ -48,3 +48,40 @@ def daftar_donor():
             'error': str(e)
         }
         return jsonify(response)
+    
+def daftar_donor_darurat():
+    data = request.get_json()
+    
+    nik = data['nik']
+    nama = data['nama']
+    darah = data['darah']
+    alamat = data['alamat']
+    nohp = data['nohp']
+    lokasi = data['lokasi']
+
+    # Koneksi MySQL
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute("INSERT INTO daftardonor (nik, nama, darah, alamat, no, lokasi, jadwal, status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", 
+                       (nik, nama, darah, alamat, nohp, lokasi, 'Segera', 'Proses'))
+
+        conn.commit()
+        conn.close()
+
+        response = {
+            'status': 'success',
+            'message': 'Pendaftaran berhasil dibuat'
+        }
+
+        return jsonify(response)
+    except Exception as e:
+        conn.rollback()
+        conn.close()
+        response = {
+            'status': 'error',
+            'message': 'Terjadi kesalahan saat pendaftaran',
+            'error': str(e)
+        }
+        return jsonify(response)

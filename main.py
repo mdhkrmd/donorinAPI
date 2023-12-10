@@ -4,8 +4,8 @@ from auth.register import register, showUsers
 from auth.login import login
 from auth.forgot import forgot
 from auth.updateProfil import updateProfil
-from donor.daftar import daftar_donor
-from donor.darahDarurat import get_darah_darurat
+from donor.daftar import daftar_donor, daftar_donor_darurat
+from donor.darahDarurat import get_darah_darurat, tambah_darah_darurat
 from donor.riwayat import riwayat_donor
 from rspmi.show import get_rspmi, get_rspmi_detail
 from artikel.artikel import get_artikel
@@ -47,6 +47,14 @@ def get_darah_darurat_route():
 @app.route('/riwayat', methods=['GET'])
 def get_riwayat_route():
     return riwayat_donor()
+
+@app.route('/tambah-darah-darurat', methods=['POST'])
+def tambah_darah_darurat_route():
+    return tambah_darah_darurat()
+
+@app.route('/daftar-donor-darurat', methods=['POST'])
+def daftar_donor_darurat_route():
+    return daftar_donor_darurat()
 
 #=============================================================================
 # RSPMI
