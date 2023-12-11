@@ -58,6 +58,8 @@ def daftar_donor_darurat():
     alamat = data['alamat']
     nohp = data['nohp']
     lokasi = data['lokasi']
+    
+    idPenerima = data['id']
 
     # Koneksi MySQL
     conn = mysql.connect()
@@ -66,6 +68,8 @@ def daftar_donor_darurat():
     try:
         cursor.execute("INSERT INTO daftardonor (nik, nama, darah, alamat, no, lokasi, jadwal, status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", 
                        (nik, nama, darah, alamat, nohp, lokasi, 'Segera', 'Proses'))
+                
+        cursor.execute("UPDATE darahdarurat SET status = %s WHERE id = %s", ('Proses', idPenerima))
 
         conn.commit()
         conn.close()

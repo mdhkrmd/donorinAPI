@@ -19,7 +19,7 @@ def riwayat_donor():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    query = "SELECT * FROM daftardonor WHERE nik = '" + nik + "'"
+    query = "SELECT * FROM daftardonor WHERE nik = '" + nik + "' ORDER BY id DESC"
     cursor.execute(query)
     
     try:
