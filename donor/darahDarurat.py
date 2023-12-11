@@ -16,7 +16,7 @@ def get_darah_darurat():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    query = 'SELECT * FROM darahdarurat ORDER BY id DESC'
+    query = 'SELECT * FROM darahdarurat WHERE status="Terbuka" ORDER BY id DESC'
     cursor.execute(query)
 
     try:
