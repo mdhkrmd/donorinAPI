@@ -13,7 +13,7 @@ app.config['MYSQL_DATABASE_HOST'] = '34.128.101.207'
 mysql.init_app(app)
 
 def showUsers():
-    username_id = request.args.get('username')
+    username_id = request.args.get('nik')
     # Koneksi MySQL
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -21,7 +21,7 @@ def showUsers():
     if username_id is None:
         query = "SELECT * FROM users"
     else:
-        query = "SELECT * FROM users WHERE username = '" + username_id + "'"
+        query = "SELECT * FROM users WHERE nik = '" + username_id + "'"
     
     try:
         cursor.execute(query)
