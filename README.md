@@ -1,5 +1,5 @@
 <p align="center">
-<img width="100" src="https://user-images.githubusercontent.com/81756856/210927351-7f000fa7-70b1-4557-bc59-7677d9d3161f.png" alt="SiBangkit">
+<img width="100" src="https://github.com/mdhkrmd/donorinAPI/blob/main/photo/Logo.jfif" alt="SiBangkit">
 </p>
 
 
@@ -10,7 +10,7 @@ Digunakan untuk mendeteksi penyakit pada kulit atau mata penderita. Cukup dengan
     
 ## Dokumentasi
 <p align="center">
-<img width="500" src="https://user-images.githubusercontent.com/81756856/210928207-5dd27701-f012-40a6-8da0-dcd4c2463aae.png" alt="SiBangkit">
+<img width="500" src="https://github.com/mdhkrmd/donorinAPI/blob/main/photo/Cloud%20Architecture.drawio.png" alt="SiBangkit">
 </p>
 
 ## Dibangun dengan
