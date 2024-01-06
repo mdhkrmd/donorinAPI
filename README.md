@@ -3,10 +3,10 @@
 </p>
 
 
-# SiBangkit
-##### Aplikasi untuk Klasifikasi Penyakit dan Rekomendasi Obat
+# Donorin API
+##### API untuk Aplikasi untuk Donor Darah
 
-Digunakan untuk mendeteksi penyakit pada kulit atau mata penderita. Cukup dengan mengambil gambar penyakit, aplikasi ini akan memberikan informasi mengenai penyakit, pencegahan dan rekomendasi obat.
+Digunakan untuk melakukan pendaftaran donor darah dan membutuhkan darah darurat. Aplikasi ini dikombinasikan dengan layanan Google Cloud
     
 ## Dokumentasi
 <p align="center">
